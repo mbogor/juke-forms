@@ -1,0 +1,12 @@
+<div ng-controller="NewPlaylistCtrl" class="thumbnail">
+  <h3>New Playlist</h3>
+  	
+  	<form name="addToPlaylistForm">
+
+	  	Song <input name="song" ng-model="addToPlaylist.songs" ng-required="required" ng-maxlength="16" type="text">
+
+
+	  	<input type="submit" value="Add Song" ng-disabled="!addToPlaylist.songs" ng-click="addSong(addToPlaylist)" class="btn btn-success">
+
+	</form> 
+</div>

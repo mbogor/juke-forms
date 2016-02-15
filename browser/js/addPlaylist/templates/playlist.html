@@ -1,23 +1,25 @@
-<div ng-controller="NewPlaylistCtrl">
-  <h3>New Playlist</h3>
+<div ng-controller="NewPlaylistCtrl" class="thumbnail">
+  <h3>{{ title || "New Playlist"}}</h3>
   	
   	<form name="newPlaylistForm">
 
-	  	Title <input name="title" ng-model="newPlaylist.title" ng-required="required" ng-maxlength="16" type="text">
+  		<div ng-show="!title">
 
-	  	<div ng-show="newPlaylistForm.title.$touched && newPlaylistForm.song.$pristine" class="alert alert-warning">You need a song!</div>
-
-	  	Song <input name="song" type="text" ng-model="newPlaylist.songs" ng-required="required" ng-maxlength="16"><br><br>
-
-	  	<div ng-show="newPlaylistForm.song.$touched && newPlaylistForm.title.$pristine" class="alert alert-warning">You need a title!</div>
-
-	  	<input type="submit" value="Create Playlist" ng-disabled="!newPlaylist.title || !newPlaylist.songs" ng-click="create(newPlaylist)" class="btn btn-success">
-<!-- 	    <p>
-		  <a class="btn btn-primary btn-block"><span class="glyphicon glyphicon-plus"></span>Submit A Playlist</a>
-		</p> -->
-
-	</form>
+		  	Title <input name="title" ng-model="newPlaylist.name" ng-required="required" ng-maxlength="16" type="text">
 
 
+		  	<input type="submit" value="Create Playlist" ng-disabled="!newPlaylist.name" ng-click="create(newPlaylist)" class="btn btn-success">
+		</div>  	
 
+	</form> 
+	<!-- <ui-view></ui-view> -->
 </div>
+
+
+<!--   	<div ng-show="newPlaylistForm.song.$pristine" class="alert alert-warning">You need a song!</div> -->
+
+<!-- 	  	<div ng-show="newPlaylist.title">
+	  	Song <input name="song" type="text" ng-model="newPlaylist.songs" ng-required="required" ng-maxlength="16"><br><br>
+	  	</div>
+
+	  	<div ng-show="newPlaylistForm.song.$touched && newPlaylistForm.title.$pristine" class="alert alert-warning">You need a title!</div> -->

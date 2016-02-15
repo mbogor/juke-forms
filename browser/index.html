@@ -14,6 +14,7 @@
     <script src="/js/player/player.controller.js" defer></script>
     <script src="/js/player/player.factory.js" defer></script>
     <script src="/js/addPlaylist/playlist.controller.js" defer></script>
+    <script src="/js/addPlaylist/playlist.factory.js" defer></script>
     <script src="/js/addPlaylist/playlist.states.js" defer></script>
     <script src="/js/sidebar/sidebar.controller.js" defer></script>
     <script src="/js/artist/artist.controllers.js" defer></script>
@@ -38,8 +39,11 @@
             </h4>
           </section>
           <hr>
-          <section>
+          <section ng-controller="SidebarPlaylistCtrl">
             <h4 class="text-muted">PLAYLISTS</h4>
+            <p class="playlist-item" ng-repeat="playlist in playlists">
+              <a ui-sref="displayPlaylist">{{playlist.name}}</a>
+            </p>
             <p>
               <a class="btn btn-primary btn-block" ui-sref="newPlaylist"><span class="glyphicon glyphicon-plus"></span> PLAYLIST</a>
             </p>
