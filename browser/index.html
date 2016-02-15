@@ -13,6 +13,8 @@
     <script src="/js/album/album.states.js" defer></script>
     <script src="/js/player/player.controller.js" defer></script>
     <script src="/js/player/player.factory.js" defer></script>
+    <script src="/js/addPlaylist/playlist.controller.js" defer></script>
+    <script src="/js/addPlaylist/playlist.states.js" defer></script>
     <script src="/js/sidebar/sidebar.controller.js" defer></script>
     <script src="/js/artist/artist.controllers.js" defer></script>
     <script src="/js/artist/artist.factory.js" defer></script>
@@ -39,17 +41,22 @@
           <section>
             <h4 class="text-muted">PLAYLISTS</h4>
             <p>
-              <a class="btn btn-primary btn-block"><span class="glyphicon glyphicon-plus"></span> PLAYLIST</a>
+              <a class="btn btn-primary btn-block" ui-sref="newPlaylist"><span class="glyphicon glyphicon-plus"></span> PLAYLIST</a>
             </p>
           </section>
         </sidebar>
       </div>
 
+
       <div class="col-xs-10">
+
         <ui-view></ui-view>
       </div>
 
       <footer>
+
+
+
         <div ng-show="getCurrentSong()" ng-controller="PlayerCtrl">
           <div class="pull-left">
             <button class="btn btn-default" ng-click="previous()">

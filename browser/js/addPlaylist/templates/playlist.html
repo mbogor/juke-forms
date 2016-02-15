@@ -1,0 +1,23 @@
+<div ng-controller="NewPlaylistCtrl">
+  <h3>New Playlist</h3>
+  	
+  	<form>
+
+	  	Title <input ng-model="newPlaylist.title" ng-required="required" ng-maxlength="16" ng-class="{ng-dirty: touchedTitle=true}" type="text">
+
+	  	<div ng-hide="TitleError()" class="alert alert-warning">You need a title!</div>
+
+	  	Song <input type="text" ng-model="newPlaylist.songs" ng-required="required" ng-maxlength="16"><br><br>
+
+	  	<div ng-hide="SongError()" class="alert alert-warning">You need a song!</div>
+
+	  	<input type="submit" value="Create Playlist" ng-disabled="!newPlaylist.title || !newPlaylist.songs" ng-click="create(newPlaylist)" class="btn btn-success">
+<!-- 	    <p>
+		  <a class="btn btn-primary btn-block"><span class="glyphicon glyphicon-plus"></span>Submit A Playlist</a>
+		</p> -->
+
+	</form>
+
+
+
+</div>
